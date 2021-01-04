@@ -1,0 +1,68 @@
+{% extends "layout.html" %} {% block title %} Log In {% endblock %} {% block
+main %}
+<div class="login-box box">
+  <form
+    action="/login"
+    method="post"
+    onsubmit="document.getElementById('loader').style.display='block';"
+  >
+    <p class="h3 mb-4">Login</p>
+    {% if correct %}
+    <div class="col-12 d-flex justify-content-center">
+      <div class="alert">
+        Incorrect username or password.
+      </div>
+    </div>
+    {% endif %}
+    <div class="form-group">
+      <input
+        autocomplete="off"
+        id="username"
+        autofocus
+        class="form-control"
+        name="username"
+        placeholder="Username"
+        type="text"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Password"
+        type="password"
+      />
+    </div>
+    <button class="btn click-btn" id="submit" type="submit" disabled>
+      Log In
+    </button>
+  </form>
+  <div id="reset-pass">
+    <a href="/reset"
+      ><span style="margin-top: 10px; font-size: 12px"
+        >Forgot your password?</span
+      ></a
+    >
+  </div>
+  <div id="loader" class="loader-contain">
+    <div class="loader">
+      <div class="center loader">
+        <div class="loader-line a-loop"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function checkField() {
+      setInterval(function () {
+        if (username.value == "" || password.value == "") {
+          document.querySelector("#submit").disabled = true;
+        } else {
+          document.querySelector("#submit").disabled = false;
+        }
+      }, 100);
+    }
+    checkField();
+  </script>
+</div>
+{% endblock %}

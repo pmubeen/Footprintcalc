@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block title %} About {% endblock %} {% block main
+%}
+<div class="container" style="padding: 10px; max-width: 550px">
+  <div class="box" style="padding: 20px; margin:0 0 10px 0;">
+    <p class="h1" style="text-align:center; border-bottom: 2px solid #50a476ff;">About <img src="/static/images/logo.png" height="40px"></p>
+    <img src="/static/images/carbonlifestyle.jpg" style="width: 100%; border-radius: 10px; margin:10px auto;">
+    <p style="justify-content: space-evenly;">Although a sharp drop in CO<sub>2</sub> emissions has been observed in the last year, this is largely a temporary bliss. But it also serves to show that it is problem that can be solved. According to United Nations' Enivronmental Program's (UNEP) <a href="https://www.unep.org/emissions-gap-report-2020">Emissions Gap Report 2020</a> 2rd's of global emissions are linked to private households primarily in developed nations. This footprint needs to be reduced atleast by a factor of 30 to stay inline with the Paris Agreement targets. </p>
+    <p>This can be done by changing consumption habits and developing a sustainable lifestyle. This app serves as an accounting tool to help people make informed decisions about their lifestyle choices.</p>
+    <img src="/static/images/flowchart.png" style="width: 100%; border-radius: 10px; margin:10px auto;">
+    <p> By using CO<sub>2</sub>-eq values from various sources, it takes in basic everday metrics (kg, km, kwh etc.) and calculates their estimated carbon emissions. By using visualization, progress can be monitored on a graph of monthly carbon emissions and biggest sources can be identified by the bar chart. Users can also keep track of their total cumulative emissions for the year.</p>
+    <p>This will help users implement better lifestyle choices to reduce their footprint. <a href="https://www.sciencenews.org/article/climate-change-actions-reduce-carbon-footprint">Learn more about how to reduce carbon footprint.</a></p>
+    <div class="alert">
+        Disclaimer: Dont input any sensitive information in the website due to privacy concerns. This tool is only used for informative purposes.
+    </div>
+  </div>
+  <div class="box" style="padding: 20px;">
+    <p class="h3" style="text-align:center;"></p>
+        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><p class="h2" style="text-align:center;">Sources</a>
+    </p>
+    <div class="sources collapse" id="collapseExample" style="font-size: 10px;">
+        Background image: <br><br>
+        1. Greenhouse Gas Emissions from Ruminant Supply Chains – A Global Life Cycle Assessment. <br><br>
+        2. Jensen, Jesper Kronborg, and Jan Stentoft Arlbjørn. “Product Carbon Footprint of Rye Bread.” Journal of Cleaner Production, vol. 82, 2014, pp. 45–57., doi:10.1016/j.jclepro.2014.06.061. <br><br>
+        3. “Average CO2 Emissions from New Cars and New Vans Increased in 2018.” European Environment Agency, 23 Nov. 2020, www.eea.europa.eu/highlights/average-co2-emissions-from-new. <br><br>
+        4. Sims R., R. Schaeffer, F. Creutzig, X. Cruz-Núñez, M. D’Agosto, D. Dimitriu, M.J. Figueroa Meza, L. Fulton, S. Kobayashi, O.
+        Lah, A. McKinnon, P. Newman, M. Ouyang, J.J. Schauer, D. Sperling, and G. Tiwari, 2014: Transport. In: Climate Change
+        2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Edenhofer, O., R. Pichs-Madruga, Y. Sokona, E. Farahani, S. Kadner, K. Seyboth, A. Adler,
+        I. Baum, S. Brunner, P. Eickemeier, B. Kriemann, J. Savolainen, S. Schlömer, C. von Stechow, T. Zwickel and J.C. Minx (eds.)].
+        Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. <br><br>
+        5. Dr. William H. Schlesinger              President Emeritus, et al. “Food Energy.” Cary Institute of Ecosystem Studies, 19 Nov. 2019, www.caryinstitute.org/news-insights/blog-translational-ecology/food-energy. <br><br>
+        6. Moudrý, Jan, et al. “Assessing Greenhouse Gas Emissions from Potato Production and Processing in the Czech Republic.” Outlook on Agriculture, vol. 42, no. 3, 2013, pp. 179–183., doi:10.5367/oa.2013.0138. <br><br>
+        7. Zaekhan, Zaekhan, and Nachrowi D. Nachrowi. “The Lmpact of Renewable Energy and GDP per Capita on Carbon Dioxide Emission in the G-20 Countries.” Economics and Finance in Indonesia, vol. 60, no. 2, 2015, p. 145., doi:10.7454/efi.v60i2.71. <br><br>
+        8. Greenhouse Gas Emissions, www.hydropower.org/resources/factsheets/greenhouse-gas-emissions. <br><br>
+        9. “Solar, Wind and Nuclear Have 'Amazingly Low' Carbon Footprints, Study Finds.” Carbon Brief, 8 Dec. 2017, www.carbonbrief.org/solar-wind-nuclear-amazingly-low-carbon-footprints. <br><br>
+        10. Bonafin, Joseph et al. “CO2 emissions from geothermal power plants: evaluation of technical solutions for CO2 reinjection.” (2019). <br><br>
+        11. The Carbon Footprint of Domestic Water Use in the Huron River Watershed. www.hrwc.org/wp-content/uploads/Carbon-Footprint-brochure_single-pages.pdf. <br><br>
+        12. Hacker, Jacob N., et al. “Embodied and Operational Carbon Dioxide Emissions from Housing: A Case Study on the Effects of Thermal Mass and Climate Change.” Energy and Buildings, vol. 40, no. 3, 2008, pp. 375–384., doi:10.1016/j.enbuild.2007.03.005. <br><br>
+        13. Acquaye, Adolf A., et al. “Stochastic Hybrid Embodied CO2-Eq Analysis: An Application to the Irish Apartment Building Sector.” Energy and Buildings, vol. 43, no. 6, 2011, pp. 1295–1303., doi:10.1016/j.enbuild.2011.01.006. <br><br>
+        14. Jeong, Young-Sun, et al. “Estimation of CO2 Emission of Apartment Buildings Due to Major Construction Materials in the Republic of Korea.” Energy and Buildings, vol. 49, 2012, pp. 437–442., doi:10.1016/j.enbuild.2012.02.041. <br><br>
+        15. “Rentals.ca February 2019 National Rent Report.” Rentals.ca, rentals.ca/blog/rentals-ca-february-2019-rent-report. <br><br>
+        16. “Environmental Impact of the IPhone – Orchard: Blog.” Orchard, 30 Nov. 2020, www.getorchard.com/blog/environmental-impact-of-the-iphone/. <br><br>
+        17. Engineer, Srilatha Manne Principal Hardware, et al. “Examining the Carbon Footprint of Devices.” Sustainable Software, 23 Nov. 2020, devblogs.microsoft.com/sustainable-software/examining-the-carbon-footprint-of-devices/. <br><br>
+        18. “Modeling the Carbon Footprint of Wood-Based Products and Buildings.” The Carbon Footprint Handbook, 2015, pp. 162–181., doi:10.1201/b18929-11. <br><br>
+        Jkaybay, ~. “Daily Footprint, #7 –Home Appliances - How to Calculate Your Carbon Footprint.” The Green Stars Project, 21 Feb. 2020, greenstarsproject.org/2016/12/30/how-to-calculate-carbon-footprint-home-appliances/. <br><br>
+  </div>
+</div>
+{% endblock %}

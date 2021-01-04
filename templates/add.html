@@ -1,0 +1,280 @@
+{% extends "layout.html" %} {% block title %} Add {% endblock %} {% block main
+%}
+<div class="login-box box">
+  <form
+    action="/add"
+    method="post"
+    onsubmit="document.getElementById('loader').style.display='block';"
+  >
+  <p class="h3 mb-4">Add</p>
+  <div class="form-group">
+    <label for="date">Date</label>
+    <div class="date">
+      <input id="date" name="date" class="form-control" type="month" value="" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Type of CO<sub>2</sub>-e emission.</label>
+    <select class="form-control" name="emission-sel" id="emission-sel">
+      <option>Transport</option>
+      <option>Food</option>
+      <option>Energy</option>
+      <option>Water</option>
+      <option>Housing</option>
+      <option>Consumer Goods</option>
+    </select>
+  </div>
+  <!--Transport-->
+  <div id="transport">
+    <div class="form-group">
+      <label for="">Type of Transport</label>
+      <select class="form-control" name="trans-sel" id="trans-sel">
+        <option>Personal Car (Non-Electric)</option>
+        <option>Carpooling</option>
+        <option>Transit</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Distance travelled in transport (km)</label>
+      <input
+        type="number"
+        name = "trans-dist"
+        class="form-control"
+        id="trans-dist"
+        min="0"
+        placeholder="Transport Dist"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+  </div>
+  <!--Food-->
+  <div id="food">
+    <div class="form-group">
+      <label for="">Amount of Meat consumed (Kg equivalent)</label>
+      <input
+        type="number"
+        name="meat"
+        class="form-control"
+        id="meat"
+        min="0"
+        placeholder="Meat"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Amount of Dairy consumed (Kg equivalent)</label>
+      <input
+        type="number"
+        name="dairy"
+        class="form-control"
+        id="dairy"
+        min="0"
+        placeholder="Dairy"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Amount of Bread consumed (Kg equiv)</label>
+      <input
+        type="number"
+        name="bread"
+        class="form-control"
+        id="bread"
+        min="0"
+        placeholder="Bread"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Amount of Vegetables consumed (Kg equiv)</label>
+      <input
+        type="number"
+        name="veggies"
+        class="form-control"
+        id="veggies"
+        min="0"
+        placeholder="Veggies"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Amount of high-calorie snacks consumed (Kg equiv)</label>
+      <input
+        type="number"
+        name="snacks"
+        class="form-control"
+        id="snacks"
+        min="0"
+        placeholder="Snacks"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+  </div>
+  <!--Energy-->
+  <div id="energy">
+    <div class="form-group">
+      <label for="">Type of Energy</label>
+      <select class="form-control" name="energy-sel" id="energy-sel">
+        <option>Coal-Powered</option>
+        <option>Oil-Powered</option>
+        <option>Hydroelectric</option>
+        <option>Nuclear</option>
+        <option>Wind</option>
+        <option>Solar</option>
+        <option>Geothermal</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Energy Used (in Kwh)</label>
+      <input
+        type="number"
+        name="energy-use"
+        class="form-control"
+        id="energy-use"
+        min="0"
+        placeholder="Energy use"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+  </div>
+  <!--Water-->
+  <div id="water">
+    <div class="form-group">
+      <label for="">Water Used (in litres)</label>
+      <input
+        type="number"
+        name="water-use"
+        class="form-control"
+        id="water-use"
+        min="0"
+        placeholder="Water use"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+  </div>
+  <!--Housing-->
+  <div id="housing">
+    <div class="form-group">
+      <label for="">Type of Housing (One Time Embodied Emissions)</label>
+      <select class="form-control" name="house-sel" id="house-sel">
+        <option>Bachelor Apartment</option>
+        <option>1-2 BHK Apartment</option>
+        <option>3-4 BHK Apartment</option>
+        <option>Townhouse</option>
+        <option>Detached House</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Number of occupants</label>
+      <input
+        type="number"
+        name="peep-no"
+        class="form-control"
+        id="peep-no"
+        min="0"
+        placeholder="Number of Occupants"
+        oninput="validity.valid||(value='');"
+      />
+    </div>
+  </div>
+  <!--Consumer Goods-->
+  <div id="consumer">
+    <div class="form-group">
+      <label for="">Type of Consumable Good</label>
+      <select class="form-control" name="consume-sel" id="consume-sel">
+        <option>Apparel</option>
+        <option>Electronics</option>
+        <option>Household</option>
+      </select>
+    </div>
+    <div id="apparel">
+      <div class="form-group">
+        <label for="">Pairs of Clothing Bought</label>
+        <input
+          type="number"
+          name="clothes-no"
+          class="form-control"
+          id="clothes-no"
+          min="0"
+          placeholder="Pairs of Clothing"
+          oninput="validity.valid||(value='');"
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Pairs of shoes Bought</label>
+        <input
+          type="number"
+          name="shoes-no"
+          class="form-control"
+          id="shoes-no"
+          min="0"
+          placeholder="Pairs of Shoes"
+          oninput="validity.valid||(value='');"
+        />
+      </div>
+    </div>
+    <div id="electronics">
+      <div class="form-group">
+        <label for="">No of phones bought</label>
+        <input
+          type="number"
+          name = "electronics"
+          class="form-control"
+          id="phones-no"
+          min="0"
+          placeholder="No of phones"
+          oninput="validity.valid||(value='');"
+        />
+      </div>
+      <div class="form-group">
+        <label for="">No of computers and tablets bought</label>
+        <input
+          type="number"
+          class="form-control"
+          id="comp-no"
+          min="0"
+          placeholder="No of computers/tablets"
+          oninput="validity.valid||(value='');"
+        />
+      </div>
+    </div>
+    <div id="household">
+      <div class="form-group" id="household">
+        <label for="">No of pieces of furniture/home decor Bought</label>
+        <input
+          type="number"
+          name="decor-no"
+          class="form-control"
+          id="decor-no"
+          min="0"
+          placeholder="No of Furniture/home decor"
+          oninput="validity.valid||(value='');"
+        />
+      </div>
+      <div class="form-group" id="household">
+        <label for="">No of Appliances Bought (Large like fridges)</label>
+        <input
+          type="number"
+          name="appliance-no"
+          class="form-control"
+          id="appliance-no"
+          min="0"
+          placeholder="No of Appliances"
+          oninput="validity.valid||(value='');"
+        />
+      </div>
+    </div>
+  </div>
+  <button id="submit" type="submit" class="btn click-btn" disabled>
+    Submit
+  </button>
+  <div id="loader" class="loader-contain">
+    <div class="loader">
+      <div class="center loader">
+        <div class="loader-line a-loop"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/assets/js/add.js"></script>
+{% endblock %}
