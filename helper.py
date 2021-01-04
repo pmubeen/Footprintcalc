@@ -129,7 +129,7 @@ class emission():
                 emm_amt.append(emission["COe"])
         emm_date = pd.to_datetime(emm_date)
         plot.line(emm_date, emm_amt, line_width=4, line_color="#50a476")
-        avg_label = Label(y=0, x=400, x_units='screen',
+        avg_label = Label(y=400, x=200, x_units='screen',
                           text='World Average', text_color="red")
         plot.add_layout(avg_label)
         avg_line = Span(location=400,
