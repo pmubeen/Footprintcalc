@@ -4,7 +4,6 @@ from bokeh.embed import components
 from bokeh.models import Span, Label
 import pandas as pd
 
-
 def TransCalc(trans_type, trans_dist):
     if trans_type == "Personal Car (Non-Electric)":
         emission = 0.1224*trans_dist
@@ -18,7 +17,6 @@ def TransCalc(trans_type, trans_dist):
     else:
         print("Error: Transport type invalid.")
         return
-
 
 def EnergyCalc(energy_type, energy_use):
     if energy_type == "Coal-Powered":
@@ -43,9 +41,7 @@ def EnergyCalc(energy_type, energy_use):
     else:
         print("Error: Energy type invalid.")
 
-
 def HousingCalc(house_sel, peep_no):
-    # 569.5 kg-CO2/m2
     if house_sel == "Bachelor Apartment":
         emission = (569.5*50)/peep_no
     elif house_sel == "1-2 BHK Apartment":
@@ -61,7 +57,6 @@ def HousingCalc(house_sel, peep_no):
         return
 
     return emission
-
 
 def consumeCalc(consume_sel):
     if consume_sel == "Apparel":
@@ -80,7 +75,6 @@ def consumeCalc(consume_sel):
         print("Error: Consumer good type invalid.")
 
     return emission
-
 
 class emission():
     def __init__(self, all_emissions):
@@ -112,8 +106,7 @@ class emission():
         return self.total_emm
 
     def emmGraph(self):
-        plot = figure(plot_height=300, x_axis_type='datetime',
-                      sizing_mode='stretch_both')
+        plot = figure(height=300, x_axis_type='datetime', sizing_mode='stretch_both')
         emm_date = []
         emm_amt = []
         for emission in self.all_emissions:

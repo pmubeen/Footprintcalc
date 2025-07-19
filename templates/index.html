@@ -1,16 +1,13 @@
 {% extends "layout.html" %} {% block title %} Index {% endblock %} {% block main
 %}
-{% if hasdata %}
+{% if nodata %}
 <div class="login-box box">
   <p class="h3">No data. Add some data.</p>
+  <div class="adder" style="width:fit-content; margin:auto;">
+          <a href="/add"><img src="/static/images/addsym.png"/></a>
+  </div>
 </div>
 {% else %}
-<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.3.min.js"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.3.min.js"
-        crossorigin="anonymous"></script>
 <div class="container-fluid visual-cont">
   <div class="row justify-content-center">
     <div class="col-lg-4 col-12" style="max-width:400px;">
@@ -127,7 +124,7 @@
           <p>kgs of CO<sub>2</sub></p>
         </div>
       </div>
-      <div class="box row" style="margin:10px 0 !important;">
+      <div class="box row" style="margin:10px 0 !important; height:300px;">
         {% for part in plot %}
             {{part | safe}}
         {% endfor %}
@@ -136,8 +133,5 @@
   </div>
 </div> 
 {% endif %}
-<script src="/static/assets/js/bokeh.min.js"></script>
-    <script src="/static/assets/js/bokeh-widgets.min.js"></script>
-    <script src="/static/assets/js/bokeh-tables.min.js"></script>
 </html>
 {% endblock %}

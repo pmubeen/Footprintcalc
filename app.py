@@ -24,6 +24,7 @@ def login_required(f):
     def decorated_function(*args, **kwargs):
         if session.get("user_id") is None:
             return redirect("/login")
+        print(session.get("user_id"))
         return f(*args, **kwargs)
     return decorated_function
 
@@ -50,10 +51,16 @@ db = SQL("sqlite:///footprint.db")
 @login_required
 def index():
     try:
-        all_emissions = emission(db.execute(
-            "SELECT * from history where id=:id ORDER BY Date DESC", id=session["user_id"]))
+        history = db.execute(
+            "SELECT * from history where id=:id ORDER BY Date DESC", id=session["user_id"])
+        if not history:
+            raise Exception("No data found for user")
+
+        all_emissions = emission(history)
     except:
         return render_template("index.html", nodata=True)
+    print(db.execute(
+            "SELECT * from history where id=:id ORDER BY Date DESC", id=session["user_id"]))
     total_emm = all_emissions.emmSum()
     kwargs = all_emissions.emmGraph()
     ratftprint = all_emissions.ftprint()
